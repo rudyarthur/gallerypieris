@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Country Map</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="map-wrapper">
+
+  <!-- Main image -->
+  <img src="images/world-map.jpg" alt="Map" class="main-map">
+
+  <!-- SVG overlay for polygon hotspots -->
+  <svg class="overlay" viewBox="0 0 1000 600" preserveAspectRatio="none">
+
+    <!-- Example polygon: Country A -->
+    <polygon
+      class="country"
+      points="120,180 220,160 260,230 190,280 110,240"
+      data-popup="country-a"
+    />
+
+    <!-- Example polygon: Country B -->
+    <polygon
+      class="country"
+      points="500,120 620,130 650,240 560,300 470,240"
+      data-popup="country-b"
+    />
+
+  </svg>
+
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeBtn" class="close-btn">&times;</button>
+    <img id="popupImage" src="" alt="Popup">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
