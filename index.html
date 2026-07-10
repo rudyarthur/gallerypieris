@@ -30,10 +30,19 @@
     max-height: 80vh;
   }
 </style>
+<script>
+  let pending;
+  function updateImage(value) {
+    clearTimeout(pending);
+    pending = setTimeout(() => {
+      document.getElementById('pic').src = 'images/' + encodeURIComponent(value) + '.webp';
+    }, 150);
+  }
+</script>
 </head>
 <body>
-
-<select id="country" onchange="document.getElementById('pic').src = 'images/' + encodeURIComponent(this.value) + '.webp'">
+<select id="country" onchange="updateImage(this.value)">
+<!--<select id="country" onchange="document.getElementById('pic').src = 'images/' + encodeURIComponent(this.value) + '.webp'">-->
 <option value="Global">Global</option>
 <option value="Afghanistan">Afghanistan</option>
 <option value="Åland">Åland</option>
